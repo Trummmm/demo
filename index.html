@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Simple Blog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            /* Add a background image */
+            background-image: url('your-image-url.jpg');
+            background-size: cover;
+        }
+        .post {
+            border: 1px solid #ccc;
+            margin: 10px;
+            padding: 10px;
+            background-color: #fff; /* Make the post background white */
+        }
+        .post-title {
+            font-weight: bold;
+        }
+        .post-content {
+            margin-top: 10px;
+        }
+        .post-button {
+            display: block;
+            width: 100px;
+            height: 25px;
+            margin: 10px 0;
+            background-color: #008CBA; /* Blue */
+            color: white;
+            text-align: center;
+            line-height: 25px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="blog">
+        <!-- Posts will be added here by JavaScript -->
+    </div>
+
+<script>
+    var posts = [
+        { title: 'Post 1', content: 'This is the first post.' },
+        { title: 'Post 2', content: 'This is the second post.' },
+        { title: 'Post 3', content: 'This is the third post.' },
+    ];
+
+    var blogElement = document.getElementById('blog');
+
+    for (var i = 0; i < posts.length; i++) {
+        var postElement = document.createElement('div');
+        postElement.className = 'post';
+
+        var titleElement = document.createElement('div');
+        titleElement.className = 'post-title';
+        titleElement.textContent = posts[i].title;
+        postElement.appendChild(titleElement);
+
+        var contentElement = document.createElement('div');
+        contentElement.className = 'post-content';
+        contentElement.textContent = posts[i].content;
+        postElement.appendChild(contentElement);
+
+        // Add a button to each post
+        var buttonElement = document.createElement('a');
+        buttonElement.className = 'post-button';
+        buttonElement.textContent = 'Go to otkho.shop';
+        buttonElement.href = 'http://otkho.shop'; // Set the href to otkho.shop
+        buttonElement.target = '_blank'; // Open in a new tab
+        postElement.appendChild(buttonElement);
+
+        blogElement.appendChild(postElement);
+    }
+</script>
+</body>
+</html>
+</body>
+</html>
